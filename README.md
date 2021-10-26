@@ -12,6 +12,11 @@
 
 1. Download or clone this repo.
 
+```js
+git clone  https://github.com/jones345/react-native-farm-health.git
+
+```
+
 2. Install dependencies.
 
 ```js
