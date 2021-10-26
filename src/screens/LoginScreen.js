@@ -45,6 +45,10 @@ export default function LoginScreen ({ navigation }) {
 
     }
 
+    navigation.reset({
+          index: 0,
+          routes: [{ name: 'Dashboard' }],
+        })
     
     
    

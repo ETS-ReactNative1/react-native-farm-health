@@ -23,6 +23,9 @@ git clone  https://github.com/jones345/react-native-farm-health.git
 npm install
 // or
 yarn install
+
+//or 
+expore start
 ```
 
 3. Run project on iOS / Android.
