@@ -10,7 +10,7 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
-import { Firebase } from '../core/Firebase'
+// import { Firebase } from '../core/Firebase'
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -23,7 +23,8 @@ export default function LoginScreen ({ navigation }) {
 
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
- // const Firebase =  Firebase()
+//  const firebase = require('Firebase')
+//  const {}
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)

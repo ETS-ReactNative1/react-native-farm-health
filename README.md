@@ -25,7 +25,7 @@ npm install
 yarn install
 
 //or 
-expore start
+
 ```
 
 3. Run project on iOS / Android.

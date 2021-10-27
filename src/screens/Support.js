@@ -1,10 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import Background from '../components/Background'
+import BackButton from '../components/BackButton'
 
-export default function Support() {
+export default function Support({ navigation }) {
     return (
-        <View>
-            <Text>Helpe</Text>
-        </View>
+        <Background>
+                <BackButton goBack={navigation.goBack} />
+                <Text>Support</Text>
+        </Background>
     )
 }
+
+

@@ -9,11 +9,12 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Dashboard,
-  Cattle,
-  Goats,
-  Poultry,
-  Support
 } from './src/screens'
+
+import  Goats from  './src/screens/Goats'
+import  Cattle from  './src/screens/Cattle'
+import  Support from  './src/screens/Support'
+import  Poultry from  './src/screens/Poultry'
 
 const Stack = createStackNavigator()
 
@@ -35,7 +36,7 @@ export default function App() {
             name="ResetPasswordScreen"
             component={ResetPasswordScreen}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="Cattle"
             component={Cattle}
           />
@@ -50,7 +51,7 @@ export default function App() {
           <Stack.Screen
             name="Support"
             component={Support}
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
