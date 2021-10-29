@@ -1,38 +1,50 @@
 import React, { Component } from 'react'
-import { Text, View,Image ,FlatList} from 'react-native'
+import { Text,StyleSheet, View,Image ,FlatList,TouchableWithoutFeedback,TouchableOpacity} from 'react-native'
 import Background from '../components/Background'
 import BackButton from '../components/BackButton'
-
-export default function Cattle({ navigation }) {
-    
-
+import Header from '../components/Header'
+import { useNavigation } from '@react-navigation/native';
+import { Transition, Transitioning } from 'react-native-reanimated';
+import { StatusBar } from 'expo-status-bar';
+import Logo from '../components/Logo'
 const data = [
 
     {
    id: 1,
     name: 'Cholera',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-    Cause:'filterable virus',
-    Symptoms:'  Loss of appetite, high fever,reddish-purplish patchwork of coloration on the affected stomach, breathing difficulty&a wobbly gait.',
-    Prevention:'A preventive vaccine is Available. No effective Treatment. Producers should use good management'
-
+    bg: '#FECBCA',
+    color: '#FD5963',
+    subCategories: [
+       
+        'Cause: Filterable virus',
+        'Symptoms:  Loss of appetite, high fever,reddish-purplish patchwork of coloration on the affected stomach, breathing difficulty&a wobbly gait.',
+        'Prevention: A preventive vaccine is Available. No effective Treatment. Producers should use good management'
+    
+    ]
+   
      
      },
       {
       id: 2,
       name: 'PNEUMONIA',
-      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-      Cause:'Bacteria, fungi, or dust,' ,
-      Symptoms:'A general dullness, failing appetite, fever & difficulty breathing.',
-      Prevention:'Proper housing, ventilation,sanitation, and antibiotics.'     
+      bg: '#FDBD50',
+     color: '#F5F5EB',
+     subCategories: [
+      'Cause: Bacteria, fungi, or dust,' ,
+      'Symptoms: A general dullness, failing appetite, fever & difficulty breathing.',
+     ' Prevention: Proper housing, ventilation,sanitation, and antibiotics.' 
+     ]    
       },
       {
      id: 3,
       name: 'TETANUS',
-      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-      Cause:'spore-forming anaerobe bacterium ',
-      Symptoms:'Difficulty swallowing, stiff muscles, & muscle spasms.',
-      Prevention:'Immunizing animals with a tetanus toxoid.'
+      bg: '#193B8C',
+      color: '#FECBCD',
+      subCategories: [
+      'Cause: Spore-forming anaerobe bacterium ',
+     ' Symptoms: Difficulty swallowing, stiff muscles, & muscle spasms.',
+     ' Prevention: Immunizing animals with a tetanus toxoid.'
+    ]
 
 
                   
@@ -41,75 +53,92 @@ const data = [
       {
       id: 4,
       name: 'ATROPHIC RHINITIS',
-      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-      Cause:'Bordetella bronchiospetica & Pasturella,',
-      Symptoms:'Affects the nose, making it crooked and wrinkled.Sneezing, nose bleeds, and a tear-stained face occur.',
-      Prevention:'Sanitation and a good health program are important for prevention.Vaccines are available.'
+      bg: '#FECBCA',
+      color: '#FD5963',
+      subCategories: [
+      'Cause: Bordetella bronchiospetica & Pasturella,',
+     ' Symptoms: Affects the nose, making it crooked and wrinkled.Sneezing, nose bleeds, and a tear-stained face occur.',
+     ' Prevention: Sanitation and a good health program are important for prevention.Vaccines are available.'
+    ]
                       
        },
        {
         id: 5,
         name: 'ANTHRAX',
-        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-        Cause:'spore-forming bacterium ',
-        Symptoms:'Fever, swelling in the lower body region, a bloody discharge, staggering,trembling, difficult breathing,& convulsive movements.',
-        Prevention:'An annual vaccination. Manure & contaminated materials should be burned & area disinfected. Insects should be controlled.'
-                        
+        bg: '#086E4B',
+        color: '#FCBE4A',
+        subCategories: [
+        'Cause: Spore-forming bacterium ',
+        'Symptoms: Fever, swelling in the lower body region, a bloody discharge, staggering,trembling, difficult breathing,& convulsive movements.',
+        'Prevention: An annual vaccination. Manure & contaminated materials should be burned & area disinfected. Insects should be controlled.'
+        ]             
         },
          {
     id: 6,
     name: 'BLACKLEG',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-    Cause:'spore-forming bacterium',
-    Symptoms:'Lameness, followed by depression & fever.. The muscles in the hip, shoulder, chest, back, & neck swell.',
-    Prevention:'A preventative vaccine.'
+    bg: '#A8DDE9',
+    color: '#3F5B98',
+    subCategories: [
+    'Cause: spore-forming bacterium',
+    ' Symptoms: Lameness, followed by depression & fever.. The muscles in the hip, shoulder, chest, back, & neck swell.',
+   ' Prevention: A preventative vaccine.']
                             
          },
          {
      id: 7,
      name: 'BRUCELLOSIS',
-     image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-     Cause:'bacteria. Brucella abortus is the bacterium',
-      Symptoms:'The abortion of the immature fetus is the only sign in some animals.',
-      Prevention:'Vaccinating calves with Brabortus prevent cattle from contacting the disease. Infected cattle must be slaughtered.'
-                            
+     bg: '#FDBD50',
+    color: '#F5F5EB',
+    subCategories: [
+     'Cause: bacteria. Brucella abortus is the bacterium',
+      'Symptoms: The abortion of the immature fetus is the only sign in some animals.',
+     ' Prevention: Vaccinating calves with Brabortus prevent cattle from contacting the disease. Infected cattle must be slaughtered.'
+    ]                  
         }
         ,
         {
     id: 8,
     name: 'ERYSIPELAS',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-    Cause:'resistant bacterium',
-    Symptoms:'Three forms: acute,subacute, & diamond skin form. Acute: constipation, diarrhea, & reddish patches on the skin. Subacute: usually localized in an organ such as heart, bladder, or joints. Sloughing off of the skin is common.',
-    Prevention:'An anti-swine erysipelasserum is available.'
-                            
+    bg: '#193B8C',
+    color: '#FECBCD',
+    subCategories: [
+    'Cause: resistant bacterium',
+   ' Symptoms: Three forms: acute,subacute, & diamond skin form. Acute: constipation, diarrhea, & reddish patches on the skin. Subacute: usually localized in an organ such as heart, bladder, or joints. Sloughing off of the skin is common.',
+    'Prevention: An anti-swine erysipelasserum is available.'
+    ]                     
         },
         {
     id: 9,
     name: 'LEPTOSPIROSIS',
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-    Cause:'acterium found in the blood, urine & milk of infected animals',
-    Symptoms:'Causes abortion & sterility.Symptoms are blood-tinged milk & urine.',
-    Prevention:'Susceptible animals should be vaccinated.'
-                            
+    bg: '#FECBCA',
+    color: '#FD5963',
+    subCategories: [
+    'Cause: acterium found in the blood, urine & milk of infected animals',
+    'Symptoms: Causes abortion & sterility.Symptoms are blood-tinged milk & urine.',
+   ' Prevention: Susceptible animals should be vaccinated.'
+    ]                     
         },
         {
       id: 10,
       name: 'TUBERCULOSIS',
-      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-      Cause:'tubercle bacilli',
-      Symptoms:'Lungs are affected. However, other organs may be affected. Some animals  show no symptoms; others appear unthrifty & have a cough.',
-      Prevention:'Maintaining a sanitary environment & comfortable quarters help prevent the disease.'
-                            
+      bg: '#086E4B',
+      color: '#FCBE4A',
+      subCategories: [
+      'Cause: tubercle bacilli',
+      'Symptoms: Lungs are affected. However, other organs may be affected. Some animals  show no symptoms; others appear unthrifty & have a cough.',
+      'Prevention: Maintaining a sanitary environment & comfortable quarters help prevent the disease.'
+      ]                  
         },
         {
      id: 11,
      name: 'FOOT ROT',
-     image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AhqjM1uUVvJr2VS-Bz52ETtqUnj-EbGbpA&usqp=CAU',
-     Cause:'fungus ',
-     Symptoms:'Skin near the hoof-line is red,swollen, & often has small lesions.',
-     Prevention:'Maintaining clean, welldrained lots is an easy method of preventing footrot.'
-                            
+     bg: '#A8DDE9',
+    color: '#3F5B98',
+    subCategories: [
+     'Cause: fungus ',
+     'Symptoms: Skin near the hoof-line is red,swollen, & often has small lesions.',
+     'Prevention: Maintaining clean, welldrained lots is an easy method of preventing footrot.'
+    ]                   
         },
     //     {
     //  id: 12,
@@ -124,45 +153,129 @@ const data = [
       ]
       const SPACING =20
       const AVATAR_SIZE= 70
-      const imageBck = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv3AL07_lZlUrwzkK4lztTvZ079waoEkjaDA&usqp=CAU'
-    return (
-            <Background style={{flex:1}}>
-                <BackButton goBack={navigation.goBack} />
-                <Image
-                source={{url:imageBck}}
-                style={StyleSheet.absoluteFillObject}
-                />
-                <FlatList
-                data={data}
-                keyExtractor={item=> item.key}
-                contentContainerStyle={{
-                    padding: SPACING
-                }}
-                renderItem={({item,index})=>{
-                    return<view style={{flexDirection:'row',padding:SPACING,marginBottom:SPACING,backgroundColor:'rgba(255,255,255,0.8)',borderRadius:12 }}>
-                        <Image
-                        source={{uri:item.image}}
-                        style={{width:AVATAR_SIZE,heigh:AVATAR_SIZE,
-                            borderRadius:AVATAR_SIZE,
-                            marginRight:SPACING/2,
-                            shadowColor:"#000",
-                            shadowOffset:{
-                                width:0,
-                                height:10
-                            },
-                            shadowOpacity:.3,
-                            shadowRadius:20
-                        
-                        }}
-                        />
-                        <View>
-                            <Text style={{fontSize:22,opacity:.8}}>{item.name}</Text>
-                            <Text style={{fontSize:22,opacity:.8}}>{item.Cause}</Text>
-                        </View>
-                    </view>
-                }}
-              />
-            </Background>
-        )
+
+   const  _onPress = (item,index) => {
+        console.log('selected item:',item,'at index',index)
+     };
+
+     const transition = (
+        <Transition.Together>
+          <Transition.In type='fade' durationMs={200} />
+          <Transition.Change />
+          <Transition.Out type='fade' durationMs={200} />
+        </Transition.Together>
+      );
+
+// export default class Cattle extends Component {
     
-}
+  
+//     render() {
+//     return (
+//             <Background style={{flex:1}}>
+                
+//                 <Header>Cattle Disease</Header>
+//                 <FlatList
+//                 data={data}
+//                 keyExtractor={item=> item.key}
+//                 contentContainerStyle={{
+//                     padding: SPACING
+//                 }}
+//                 renderItem={({item,index})=>{
+//                     return<view style={{flexDirection:'row',padding:SPACING,marginBottom:SPACING,backgroundColor:'rgba(255,255,255,0.8)',borderRadius:12 }}>
+                       
+//                        <TouchableOpacity onPress={ () => this.actionOnRow(item)}>
+//                         <View>
+//                             <Text style={{fontSize:22,opacity:.8,fontWeight: 'bold'}}>{item.name}</Text>
+//                             <Text style={{fontSize:22,opacity:.8}}>{item.Cause}</Text>
+//                         </View>
+//                         </TouchableOpacity>
+//                     </view>
+//                 }}
+//               />
+//             </Background>
+//         )
+
+//             }
+
+//             actionOnRow(item) {
+//                 console.log('Selected Item :',item);
+//              }
+    
+// }
+
+
+export default function Cattle({ navigation }) {
+    const [currentIndex, setCurrentIndex] = React.useState(null);
+    const ref = React.useRef();
+  
+    return (
+       
+      <Transitioning.View
+        ref={ref}
+        transition={transition}
+        style={styles.container}
+      >
+        <StatusBar hidden />
+        {data.map(({bg, color, name, subCategories }, index) => {
+          return (
+            <TouchableOpacity
+              key={name}
+              onPress={() => {
+                ref.current.animateNextTransition();
+                setCurrentIndex(index === currentIndex ? null : index);
+              }}
+              style={styles.cardContainer}
+              activeOpacity={0.9}
+            >
+              <View style={[styles.card, { backgroundColor: bg }]}>
+                <Text style={[styles.heading, { color }]}>{name}</Text>
+                {index === currentIndex && (
+                  <View style={styles.subCategoriesList}>
+                    {subCategories.map((subCategory) => (
+                      <Text key={subCategory} style={[styles.body, { color }]}>
+                        {subCategory}
+                      </Text>
+                    ))}
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+      </Transitioning.View>
+      
+    );
+  }
+  
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      justifyContent: 'center',
+    },
+    cardContainer: {
+      flexGrow: 1,
+    },
+    card: {
+      flexGrow: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    heading: {
+      fontSize: 38,
+      fontWeight: '900',
+      textTransform: 'uppercase',
+      letterSpacing: -2,
+    },
+    body: {
+      fontSize: 20,
+      lineHeight: 20 * 1.5,
+      textAlign: 'center',
+    },
+    subCategoriesList: {
+      marginTop: 20,
+    },
+  });
+  
+
+
