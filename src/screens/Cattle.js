@@ -207,7 +207,7 @@ const data = [
 export default function Cattle({ navigation }) {
     const [currentIndex, setCurrentIndex] = React.useState(null);
     const ref = React.useRef();
-  
+  const bgColor = '#123320'
     return (
        
       <Transitioning.View
@@ -227,7 +227,7 @@ export default function Cattle({ navigation }) {
               style={styles.cardContainer}
               activeOpacity={0.9}
             >
-              <View style={[styles.card, { backgroundColor: bg }]}>
+              <View style={[styles.card, { backgroundColor: bgColor }]}>
                 <Text style={[styles.heading, { color }]}>{name}</Text>
                 {index === currentIndex && (
                   <View style={styles.subCategoriesList}>
@@ -262,7 +262,7 @@ export default function Cattle({ navigation }) {
       justifyContent: 'center',
     },
     heading: {
-      fontSize: 38,
+      fontSize: 21,
       fontWeight: '900',
       textTransform: 'uppercase',
       letterSpacing: -2,

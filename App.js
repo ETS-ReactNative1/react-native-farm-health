@@ -12,7 +12,7 @@ import {
 } from './src/screens'
 
 import  Goats from  './src/screens/Goats'
-import  Cattle from  './src/screens/Cattle'
+import  CattleNav from  './src/screens/CattleNav'
 import  Support from  './src/screens/Support'
 import  Poultry from  './src/screens/Poultry'
 
@@ -38,7 +38,7 @@ export default function App() {
           />
           <Stack.Screen
             name="Cattle"
-            component={Cattle}
+            component={CattleNav}
           />
           <Stack.Screen
             name="Goats"
