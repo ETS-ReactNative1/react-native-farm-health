@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
 
 
-const image = { uri: "https://mediacloud.theweek.co.uk/image/private/s--lnvD3yI5--/v1606840457/theweek/2020/11/gettyimages-1217780063.jpg" };
+const image = { uri: "https://i.pinimg.com/originals/8f/64/ad/8f64ad76980a7e3b35d084a6d67c96c5.jpg" };
 
 export default function Background({ children }) {
   return (

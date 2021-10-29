@@ -7,7 +7,20 @@ import NavBar from './../components/Navbar'
 import BackButton from '../components/BackButton'
 import { useNavigation } from '@react-navigation/native';
 import Background from '../components/Background'
-import Logo from '../components/Logo'
+
+export default function Dashboard({navigation}){
+  return(
+    <Background>
+     
+    <Header> Leruo Health</Header>
+    <NavBar/>
+    </Background>
+  )
+}
+
+
+
+
 // export default function Dashboard ({ navigation }) {
 
 //    const navigation = useNavigation();
@@ -27,16 +40,3 @@ import Logo from '../components/Logo'
 //     )
   
 // }
-
-export default function Dashboard({navigation}){
-  return(
-    <Background>
-       <BackButton goBack={navigation.goBack} />
-       <Logo />
-               <Header> Leruo Health</Header>
-                <NavBar/>
-            
-
-    </Background>
-  )
-}

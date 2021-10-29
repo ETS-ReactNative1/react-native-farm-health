@@ -12,8 +12,8 @@ const data = [
     {
    id: 1,
     name: 'Cholera',
-    bg: '#FECBCA',
-    color: '#FD5963',
+    bg: '#3E7C17',
+    color: '#F5F5EB',
     subCategories: [
        
         'Cause: Filterable virus',
@@ -27,7 +27,7 @@ const data = [
       {
       id: 2,
       name: 'PNEUMONIA',
-      bg: '#FDBD50',
+      bg: '#406343',
      color: '#F5F5EB',
      subCategories: [
       'Cause: Bacteria, fungi, or dust,' ,
@@ -38,8 +38,8 @@ const data = [
       {
      id: 3,
       name: 'TETANUS',
-      bg: '#193B8C',
-      color: '#FECBCD',
+      bg: '#5B6D5B',
+      color: '#F5F5EB',
       subCategories: [
       'Cause: Spore-forming anaerobe bacterium ',
      ' Symptoms: Difficulty swallowing, stiff muscles, & muscle spasms.',
@@ -53,8 +53,8 @@ const data = [
       {
       id: 4,
       name: 'ATROPHIC RHINITIS',
-      bg: '#FECBCA',
-      color: '#FD5963',
+      bg: '#798777',
+      color: '#F5F5EB',
       subCategories: [
       'Cause: Bordetella bronchiospetica & Pasturella,',
      ' Symptoms: Affects the nose, making it crooked and wrinkled.Sneezing, nose bleeds, and a tear-stained face occur.',
@@ -66,7 +66,7 @@ const data = [
         id: 5,
         name: 'ANTHRAX',
         bg: '#086E4B',
-        color: '#FCBE4A',
+        color: '#F5F5EB',
         subCategories: [
         'Cause: Spore-forming bacterium ',
         'Symptoms: Fever, swelling in the lower body region, a bloody discharge, staggering,trembling, difficult breathing,& convulsive movements.',
@@ -76,8 +76,8 @@ const data = [
          {
     id: 6,
     name: 'BLACKLEG',
-    bg: '#A8DDE9',
-    color: '#3F5B98',
+    bg: '#61B15A',
+    color: '#F5F5EB',
     subCategories: [
     'Cause: spore-forming bacterium',
     ' Symptoms: Lameness, followed by depression & fever.. The muscles in the hip, shoulder, chest, back, & neck swell.',
@@ -87,8 +87,8 @@ const data = [
          {
      id: 7,
      name: 'BRUCELLOSIS',
-     bg: '#FDBD50',
-    color: '#F5F5EB',
+     bg: '#ADCE74',
+     color: '#F5F5EB',
     subCategories: [
      'Cause: bacteria. Brucella abortus is the bacterium',
       'Symptoms: The abortion of the immature fetus is the only sign in some animals.',
@@ -99,8 +99,8 @@ const data = [
         {
     id: 8,
     name: 'ERYSIPELAS',
-    bg: '#193B8C',
-    color: '#FECBCD',
+    bg: '#81B214',
+    color: '#F5F5EB',
     subCategories: [
     'Cause: resistant bacterium',
    ' Symptoms: Three forms: acute,subacute, & diamond skin form. Acute: constipation, diarrhea, & reddish patches on the skin. Subacute: usually localized in an organ such as heart, bladder, or joints. Sloughing off of the skin is common.',
@@ -110,8 +110,8 @@ const data = [
         {
     id: 9,
     name: 'LEPTOSPIROSIS',
-    bg: '#FECBCA',
-    color: '#FD5963',
+    bg: '#62760C',
+    color: '#F5F5EB',
     subCategories: [
     'Cause: acterium found in the blood, urine & milk of infected animals',
     'Symptoms: Causes abortion & sterility.Symptoms are blood-tinged milk & urine.',
@@ -121,8 +121,8 @@ const data = [
         {
       id: 10,
       name: 'TUBERCULOSIS',
-      bg: '#086E4B',
-      color: '#FCBE4A',
+      bg: '#535204',
+      color: '#F5F5EB',
       subCategories: [
       'Cause: tubercle bacilli',
       'Symptoms: Lungs are affected. However, other organs may be affected. Some animals  show no symptoms; others appear unthrifty & have a cough.',
@@ -132,8 +132,8 @@ const data = [
         {
      id: 11,
      name: 'FOOT ROT',
-     bg: '#A8DDE9',
-    color: '#3F5B98',
+     bg: '#406343',
+     color: '#F5F5EB',
     subCategories: [
      'Cause: fungus ',
      'Symptoms: Skin near the hoof-line is red,swollen, & often has small lesions.',
