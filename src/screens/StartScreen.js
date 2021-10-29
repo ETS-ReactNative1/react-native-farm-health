@@ -11,7 +11,7 @@ export default function StartScreen({ navigation }) {
       <Logo />
       <Header>Leruo</Header>
       <Paragraph>
-        Leruo animal application
+        Leruo animal Health
       </Paragraph>
       <Button
         mode="contained"

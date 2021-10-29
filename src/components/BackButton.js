@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
-
+import { theme } from '../core/theme'
 export default function BackButton({ goBack }) {
   return (
     <TouchableOpacity onPress={goBack} style={styles.container}>
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     left: 4,
   },
   image: {
+    backgroundColor: theme.colors.back,
     width: 24,
     height: 24,
   },

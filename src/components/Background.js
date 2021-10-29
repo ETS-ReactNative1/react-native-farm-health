@@ -2,11 +2,14 @@ import React from 'react'
 import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
 
+
+const image = { uri: "https://mediacloud.theweek.co.uk/image/private/s--lnvD3yI5--/v1606840457/theweek/2020/11/gettyimages-1217780063.jpg" };
+
 export default function Background({ children }) {
   return (
     <ImageBackground
-      source={require('../assets/background_dot.png')}
-      resizeMode="repeat"
+      source={image}
+      resizeMode="cover"
       style={styles.background}
     >
       <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -20,7 +23,9 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     width: '100%',
-    backgroundColor: theme.colors.surface,
+    // backgroundColor: theme.colors.surface,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
   container: {
     flex: 1,
