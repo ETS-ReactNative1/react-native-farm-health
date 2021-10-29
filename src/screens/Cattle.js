@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text,StyleSheet, View,Image ,FlatList,TouchableWithoutFeedback,TouchableOpacity} from 'react-native'
+import { Text,StyleSheet,SafeAreaView, View,Image ,FlatList,TouchableWithoutFeedback,TouchableOpacity} from 'react-native'
 import Background from '../components/Background'
 import BackButton from '../components/BackButton'
 import Header from '../components/Header'
@@ -166,45 +166,24 @@ const data = [
         </Transition.Together>
       );
 
-// export default class Cattle extends Component {
+export default class Cattle extends Component {
     
   
-//     render() {
-//     return (
-//             <Background style={{flex:1}}>
-                
-//                 <Header>Cattle Disease</Header>
-//                 <FlatList
-//                 data={data}
-//                 keyExtractor={item=> item.key}
-//                 contentContainerStyle={{
-//                     padding: SPACING
-//                 }}
-//                 renderItem={({item,index})=>{
-//                     return<view style={{flexDirection:'row',padding:SPACING,marginBottom:SPACING,backgroundColor:'rgba(255,255,255,0.8)',borderRadius:12 }}>
-                       
-//                        <TouchableOpacity onPress={ () => this.actionOnRow(item)}>
-//                         <View>
-//                             <Text style={{fontSize:22,opacity:.8,fontWeight: 'bold'}}>{item.name}</Text>
-//                             <Text style={{fontSize:22,opacity:.8}}>{item.Cause}</Text>
-//                         </View>
-//                         </TouchableOpacity>
-//                     </view>
-//                 }}
-//               />
-//             </Background>
-//         )
+    render() {
+    return (
+            
+       <CattleList/>
+            
+        )
 
-//             }
+            }
 
-//             actionOnRow(item) {
-//                 console.log('Selected Item :',item);
-//              }
     
-// }
+    
+}
 
 
-export default function Cattle({ navigation }) {
+ function CattleList({ navigation }) {
     const [currentIndex, setCurrentIndex] = React.useState(null);
     const ref = React.useRef();
   const bgColor = '#123320'
