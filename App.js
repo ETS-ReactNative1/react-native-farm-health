@@ -11,10 +11,10 @@ import {
   Dashboard,
 } from './src/screens'
 
-import  Goats from  './src/screens/Goats'
+import  GoatNav from  './src/screens/GoatNav'
 import  CattleNav from  './src/screens/CattleNav'
 import  Support from  './src/screens/Support'
-import  Poultry from  './src/screens/Poultry'
+import  PoultryNav from  './src/screens/PoultryNav'
 
 const Stack = createStackNavigator()
 
@@ -42,11 +42,11 @@ export default function App() {
           />
           <Stack.Screen
             name="Goats"
-            component={Goats}
+            component={GoatNav}
           />
           <Stack.Screen
             name="Poultry"
-            component={Poultry}
+            component={PoultryNav}
           />
           <Stack.Screen
             name="Support"

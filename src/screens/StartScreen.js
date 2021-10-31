@@ -8,22 +8,13 @@ import Paragraph from '../components/Paragraph'
 export default function StartScreen({ navigation }) {
   return (
     <Background>
-      <br/>
-      <br/>
-      <br/>
+
       <Logo />
-      {/* <Header>Leruo</Header>
+      <Header>Leruo</Header>
       <Paragraph>
-        Leruo animal Health
-      </Paragraph> */}
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      Good health and  conscious living.
+      </Paragraph>
+
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}

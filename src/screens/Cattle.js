@@ -206,7 +206,7 @@ export default class Cattle extends Component {
               style={styles.cardContainer}
               activeOpacity={0.9}
             >
-              <View style={[styles.card, { backgroundColor: bgColor }]}>
+              <View style={[styles.card, { backgroundColor: bg }]}>
                 <Text style={[styles.heading, { color }]}>{name}</Text>
                 {index === currentIndex && (
                   <View style={styles.subCategoriesList}>
